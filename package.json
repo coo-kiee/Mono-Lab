@@ -1,0 +1,9 @@
+{
+  "name": "Mono-Lab",
+  "packageManager": "yarn@3.8.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
