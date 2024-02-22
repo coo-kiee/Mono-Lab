@@ -5,5 +5,10 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "@types/eslint": "^8",
+    "eslint": "^8.2.0",
+    "prettier": "^3.2.5"
+  }
 }
