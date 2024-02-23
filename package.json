@@ -6,8 +6,14 @@
     "apps/*",
     "packages/*"
   ],
+  "scripts": {
+    "only": "yarn workspaces foreach --from $0 run $1",
+    "apps": "yarn workspaces foreach -Ap --from @apps/* run $@",
+    "packages": "yarn workspaces foreach -Ap --include '@packages/*' run $@",
+    "all": "yarn workspaces foreach -Ap run $@"
+  },
   "devDependencies": {
-    "@lab/eslint-config-custom": "*",
+    "@packages/eslint-config-custom": "*",
     "@types/eslint": "^8",
     "@types/node": "^20.11.20",
     "eslint": "^8.2.0",

@@ -20,6 +20,30 @@
 
 ##
 
+### Apps/Packages Naming Rule
+
+#### Apps
+
+```
+// package.json
+{
+    ...,
+    name: "@apps/{name}"
+}
+```
+
+#### Packages
+
+```
+// package.json
+{
+    ...,
+    name: "@packages/{name}"
+}
+```
+
+##
+
 ### Commit Message Convension
 
 #### Title

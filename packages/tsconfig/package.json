@@ -1,6 +1,9 @@
 {
-  "name": "@lab/tsconfig",
+  "name": "@packages/tsconfig",
   "packageManager": "yarn@3.8.0",
   "version": "0.0.0",
-  "private": true
+  "private": true,
+  "scripts": {
+    "echo": "echo @packages/tsconfig"
+  }
 }
