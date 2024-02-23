@@ -106,6 +106,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@lab/tsconfig@workspace:packages/tsconfig":
+  version: 0.0.0-use.local
+  resolution: "@lab/tsconfig@workspace:packages/tsconfig"
+  languageName: unknown
+  linkType: soft
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"

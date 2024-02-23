@@ -71,6 +71,18 @@ $ yarn workspaces foreach
 
   #### $ yarn add -D eslint-config-prettier
 
+- tsconfig
+
+  #### $ cd packages
+
+  #### $ mkdir tsconfig
+
+  #### $ cd tsconfig
+
+  #### $ yarn init
+
 #### Add Packages
 
 #### $ yarn add -D @lab/eslint-config-custom
+
+#### $ yarn add -D @lab/tsconfig

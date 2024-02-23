@@ -18,12 +18,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "@lab/eslint-config-custom",\
         "reference": "workspace:packages/eslint-config-custom"\
+      },\
+      {\
+        "name": "@lab/tsconfig",\
+        "reference": "workspace:packages/tsconfig"\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
       ["@lab/eslint-config-custom", ["workspace:packages/eslint-config-custom"]],\
+      ["@lab/tsconfig", ["workspace:packages/tsconfig"]],\
       ["Mono-Lab", ["workspace:."]]\
     ],\
     "fallbackPool": [\
@@ -180,6 +185,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-jsx-a11y", "virtual:5e1ff6ec64d19c27a8f6b24d577fffe1164dcbbca583f7d6688fc84175168905b24673c4390fea11580c7b655aeefe09ee7c4dc1616e5ab189848cf479dfd508#npm:6.8.0"],\
             ["eslint-plugin-react", "virtual:5e1ff6ec64d19c27a8f6b24d577fffe1164dcbbca583f7d6688fc84175168905b24673c4390fea11580c7b655aeefe09ee7c4dc1616e5ab189848cf479dfd508#npm:7.33.2"],\
             ["eslint-plugin-react-hooks", "virtual:5e1ff6ec64d19c27a8f6b24d577fffe1164dcbbca583f7d6688fc84175168905b24673c4390fea11580c7b655aeefe09ee7c4dc1616e5ab189848cf479dfd508#npm:4.6.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@lab/tsconfig", [\
+        ["workspace:packages/tsconfig", {\
+          "packageLocation": "./packages/tsconfig/",\
+          "packageDependencies": [\
+            ["@lab/tsconfig", "workspace:packages/tsconfig"]\
           ],\
           "linkType": "SOFT"\
         }]\
