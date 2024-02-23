@@ -7,7 +7,9 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@lab/eslint-config-custom": "*",
     "@types/eslint": "^8",
+    "@types/node": "^20.11.20",
     "eslint": "^8.2.0",
     "prettier": "^3.2.5"
   }
