@@ -20,6 +20,33 @@
 
 ##
 
+### Commit Message Convension
+
+#### Title
+
+- repositoryName (Option) - Required when it is one
+- Type
+- Subject (Option) - Required when no body is present
+
+```
+[repositoryName]/[Type] Subject
+```
+
+#### Body
+
+- repositoryName
+- Type
+- Explain
+
+```
+[Type] Subject
+  - [repositoryName1]/[Type] Explain
+  - [repositoryName2]/[Type] Explain
+  ...
+```
+
+##
+
 ### CLI History
 
 #### Yarn Berry Workspaces
