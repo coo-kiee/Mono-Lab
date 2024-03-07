@@ -145,6 +145,4 @@ $ yarn workspaces foreach
 
 #### Add Packages
 
-#### $ yarn add -D @lab/eslint-config-custom
-
-#### $ yarn add -D @lab/tsconfig
+#### $ yarn add -D @packages/eslint-config-custom @packages/tsconfig
