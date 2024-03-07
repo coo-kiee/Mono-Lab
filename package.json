@@ -1,0 +1,27 @@
+{
+  "name": "Mono-Lab",
+  "packageManager": "yarn@3.8.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "example": "./packages/scripts/output-example.sh",
+    "app": "yarn workspaces foreach --from @apps/$0 run $1",
+    "package": "yarn workspaces foreach --from @packages/$0 run $1",
+    "all": "yarn workspaces foreach -Ap run $@",
+    "all-app": "yarn workspaces foreach -Ap --from @apps/* run $@",
+    "all-package": "yarn workspaces foreach -Ap --include '@packages/*' run $@",
+    "initial": "yarn workspaces foreach --from $@ add -D @packages/tsconfig @packages/eslint-config-custom",
+    "add-workspace": "./packages/scripts/add-workspace.sh",
+    "mod-workspace-name": "./packages/scripts/mod-workspace-name.sh"
+  },
+  "devDependencies": {
+    "@packages/eslint-config-custom": "*",
+    "@types/eslint": "^8",
+    "@types/node": "^20.11.20",
+    "eslint": "^8.2.0",
+    "prettier": "^3.2.5"
+  }
+}
