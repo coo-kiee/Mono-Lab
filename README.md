@@ -48,17 +48,20 @@
 
 #### Title
 
-- repositoryName (Option) - Required when it is one
-- Type
-- Subject (Option) - Required when no body is present
+- repositoryName (Option) - `Calmel Case`, `Required` when it is one
+- Type - `Calmel Case`, `Add/Mod/Del/HotFix`
+- Subject (Option) - `Required` when no body is present
 
 ```
 [repositoryName]/[Type] Subject
+
+ex.
+[Tsconfig]/[Add] base.json 추가
 ```
 
 #### Body
 
-- repositoryName
+- repositoryName - `Calmel Case`
 - Type
 - Explain
 
@@ -67,6 +70,14 @@
   - [repositoryName1]/[Type] Explain
   - [repositoryName2]/[Type] Explain
   ...
+
+ex.
+[Add/Mod] 초기설정
+  - [Tsconfig]/[Add] base.json 추가
+  - [Eslint-Config-Custom]/[Mod] javascript 설정 변경
+    - airbnb-base 추가
+    - ignorePatterns 수정
+
 ```
 
 ##
