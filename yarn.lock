@@ -115,7 +115,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@packages/eslint-config-custom@*, @packages/eslint-config-custom@workspace:packages/eslint-config-custom":
+"@packages/eslint-config-custom@workspace:^, @packages/eslint-config-custom@workspace:packages/eslint-config-custom":
   version: 0.0.0-use.local
   resolution: "@packages/eslint-config-custom@workspace:packages/eslint-config-custom"
   dependencies:
@@ -133,7 +133,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@packages/tsconfig@workspace:packages/tsconfig":
+"@packages/tsconfig@workspace:^, @packages/tsconfig@workspace:packages/tsconfig":
   version: 0.0.0-use.local
   resolution: "@packages/tsconfig@workspace:packages/tsconfig"
   languageName: unknown
@@ -320,10 +320,22 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "Mono-Lab@workspace:."
   dependencies:
-    "@packages/eslint-config-custom": "*"
+    "@packages/eslint-config-custom": "workspace:^"
+    "@packages/tsconfig": "workspace:^"
     "@types/eslint": ^8
     "@types/node": ^20.11.20
+    "@typescript-eslint/eslint-plugin": ^6.0.0
+    "@typescript-eslint/parser": ^6.0.0
     eslint: ^8.2.0
+    eslint-config-airbnb: ^19.0.4
+    eslint-config-airbnb-base: ^15.0.0
+    eslint-config-airbnb-typescript: ^17.1.0
+    eslint-config-prettier: ^9.1.0
+    eslint-import-resolver-typescript: ^3.6.1
+    eslint-plugin-import: ^2.25.3
+    eslint-plugin-jsx-a11y: ^6.5.1
+    eslint-plugin-react: ^7.28.0
+    eslint-plugin-react-hooks: ^4.3.0
     prettier: ^3.2.5
   languageName: unknown
   linkType: soft

@@ -52,6 +52,8 @@ cd $path
 ## Init App
 yarn init
 
+yarn add -D @packages/tsconfig @packages/eslint-config-custom @typescript-eslint/eslint-plugin@^6.0.0 @typescript-eslint/parser@^6.0.0 eslint@^8.2.0 eslint-config-airbnb@^19.0.4 eslint-config-airbnb-base@^15.0.0 eslint-config-airbnb-typescript@^17.1.0 eslint-config-prettier@^9.1.0 eslint-import-resolver-typescript@^3.6.1 eslint-plugin-import@^2.25.3 eslint-plugin-jsx-a11y@^6.5.1 eslint-plugin-react@^7.28.0 eslint-plugin-react-hooks@^4.3.0
+
 ## Move to Root
 cd $root
 
@@ -60,8 +62,6 @@ sed -i "s/$2/${escape_workspace_name}/" $path/package.json
 sed -n "/${escape_workspace_name}/p" $path/package.json
 
 yarn
-
-yarn initial $escape_workspace_name
 
 green "add-workspace" && red " ${workspace_name}" && add_echo_text " End!!"
 
