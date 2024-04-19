@@ -46,7 +46,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-airbnb-base", "virtual:ede264eabbfd040bea5eb77ab4e80943a8508013140f2c141d89de87c653fe6f7dc8f3eef678087efc1e586a91b3f3af77bf49f147a6471ca241026fe3a5e486#npm:15.0.0"],\
             ["eslint-config-prettier", "virtual:ede264eabbfd040bea5eb77ab4e80943a8508013140f2c141d89de87c653fe6f7dc8f3eef678087efc1e586a91b3f3af77bf49f147a6471ca241026fe3a5e486#npm:9.1.0"],\
             ["eslint-plugin-import", "virtual:ede264eabbfd040bea5eb77ab4e80943a8508013140f2c141d89de87c653fe6f7dc8f3eef678087efc1e586a91b3f3af77bf49f147a6471ca241026fe3a5e486#npm:2.29.1"],\
-            ["prettier", "npm:3.2.5"]\
+            ["prettier", "npm:3.2.5"],\
+            ["typescript", "patch:typescript@npm%3A5.4.5#~builtin<compat/typescript>::version=5.4.5&hash=d69c25"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -637,7 +638,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-airbnb-base", "virtual:ede264eabbfd040bea5eb77ab4e80943a8508013140f2c141d89de87c653fe6f7dc8f3eef678087efc1e586a91b3f3af77bf49f147a6471ca241026fe3a5e486#npm:15.0.0"],\
             ["eslint-config-prettier", "virtual:ede264eabbfd040bea5eb77ab4e80943a8508013140f2c141d89de87c653fe6f7dc8f3eef678087efc1e586a91b3f3af77bf49f147a6471ca241026fe3a5e486#npm:9.1.0"],\
             ["eslint-plugin-import", "virtual:ede264eabbfd040bea5eb77ab4e80943a8508013140f2c141d89de87c653fe6f7dc8f3eef678087efc1e586a91b3f3af77bf49f147a6471ca241026fe3a5e486#npm:2.29.1"],\
-            ["prettier", "npm:3.2.5"]\
+            ["prettier", "npm:3.2.5"],\
+            ["typescript", "patch:typescript@npm%3A5.4.5#~builtin<compat/typescript>::version=5.4.5&hash=d69c25"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -3805,6 +3807,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["has-proto", "npm:1.0.3"],\
             ["is-typed-array", "npm:1.1.13"],\
             ["possible-typed-array-names", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["typescript", [\
+        ["patch:typescript@npm%3A5.4.5#~builtin<compat/typescript>::version=5.4.5&hash=d69c25", {\
+          "packageLocation": "./.yarn/cache/typescript-patch-507b58f873-2373c693f3.zip/node_modules/typescript/",\
+          "packageDependencies": [\
+            ["typescript", "patch:typescript@npm%3A5.4.5#~builtin<compat/typescript>::version=5.4.5&hash=d69c25"]\
           ],\
           "linkType": "HARD"\
         }]\

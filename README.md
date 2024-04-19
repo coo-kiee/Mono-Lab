@@ -2,6 +2,24 @@
 
 #### Labs for proof of concept and implementation
 
+## Start
+
+```
+# yarn dlx @yarnpkg/sdks vscode
+
+$ yarn example
+
+// print
+app: yarn app tsconfig echo
+package: yarn package tsconfig echo
+all: yarn all echo
+all-app: yarn all-app echo
+all-package: yarn all-package echo
+add-workspace: yarn add-workspace test
+```
+
+####
+
 ##
 
 ### Package Manager
@@ -111,7 +129,7 @@ $ yarn workspaces foreach
 
 #### $ mkdir apps packages
 
-#### Create Packages
+#### Create Config
 
 - eslint-config-custom
 
@@ -142,7 +160,3 @@ $ yarn workspaces foreach
   #### $ cd tsconfig
 
   #### $ yarn init
-
-#### Add Packages
-
-#### $ yarn add -D @packages/eslint-config-custom @packages/tsconfig
