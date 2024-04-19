@@ -1,5 +1,4 @@
 export echo_text=""
-
 red() {
     red="\033[31m"$1"\033[0m"
     echo_text="$echo_text$red"
@@ -30,10 +29,15 @@ sky() {
     echo_text="$echo_text$sky"
 }
 
-add_echo_text() {
+add_text() {
     echo_text="$echo_text$1"
 }
 
-reset_echo_text() {
+reset_text() {
     echo_text=""
+}
+
+print_text() {
+    printf "$echo_text\n"
+    reset_text
 }

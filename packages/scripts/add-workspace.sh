@@ -1,45 +1,43 @@
-eval "$(cat ./packages/scripts/color.sh)"
+#!/bin/bash
+. "./packages/scripts/color.sh"
+. "./packages/scripts/select.sh"
 
-green "add-workspace" && add_echo_text " Start!!"
+## Check Arguments
+if [ $# -eq 0 ]; then
+    red "Error:" && add_text " Input" && yellow " repository_name"
+    print_text
+    exit 100
+elif [ $# -gt 1 ]; then
+    red "Error:" && add_text " Input" && yellow " 1 Argument"
+    print_text
+    exit 100
+fi
 
-echo "${echo_text}" && reset_echo_text
+
+green "add-workspace" && add_text " Start!!"
+
+echo "${echo_text}" && reset_text
 
 ## File Name
 echo "$0"
 
-## Check Arguments
-if [ $# != 2 ]
-then
-    red "Error:" && add_echo_text " Input" && yellow " group_name" && add_echo_text " And" && yellow " repository_name\n"
-    blue "group_name:" && yellow " apps" && add_echo_text " OR" && yellow " packages"
+## Select Workspace Group
+workspace_group_options=("apps" "packages")
+select_option "${workspace_group_options[@]}" "Select_Workspace_Group"
 
-    echo $echo_text && reset_echo_text
-    exit 100
-fi
-
-if [ $1 != "apps" ] && [ $1 != "packages" ]
-then
-    red "Error:" && add_echo_text " Input Wrong" && yellow " group_name.\n"
-    blue "Can Input:" && yellow " apps" && add_echo_text " OR" && yellow " packages"
-
-    echo $echo_text && reset_echo_text
-    exit 100
-fi
-
-## Declare Variant
+# ## Declare Variant
 root=$PWD
-group_name=$1
-repository_name=$2
-
+repository_name=$1
+group_name=$select_result
 path="./${group_name}/${repository_name}"
 workspace_name="@${group_name}/${repository_name}"
 escape_workspace_name="@${group_name}\/${repository_name}"
 
 if [ -d $path ]
 then
-    red "Error:" && blue " workspace" && add_echo_text " is already exists." && yellow " ${workspace_name}.\n"
+    red "Error:" && blue " workspace" && add_text " is already exists." && yellow " ${workspace_name}.\n"
 
-    echo $echo_text && reset_echo_text
+    print_text
     exit
 fi
 
@@ -49,23 +47,49 @@ mkdir -p $path
 ## Move to App
 cd $path
 
-## Init App
-yarn init
+delete_directory() {
+    red "An error occurred in the script" && print_text
+    add_text "Delete Directory: " && yellow "$path"
+    print_text
 
-yarn add -D @packages/tsconfig @packages/eslint-config-custom @typescript-eslint/eslint-plugin@^6.0.0 @typescript-eslint/parser@^6.0.0 eslint@^8.2.0 eslint-config-airbnb@^19.0.4 eslint-config-airbnb-base@^15.0.0 eslint-config-airbnb-typescript@^17.1.0 eslint-config-prettier@^9.1.0 eslint-import-resolver-typescript@^3.6.1 eslint-plugin-import@^2.25.3 eslint-plugin-jsx-a11y@^6.5.1 eslint-plugin-react@^7.28.0 eslint-plugin-react-hooks@^4.3.0
+    cd $root
+    rm -rf "$path"
+    exit
+}
+
+trap delete_directory ERR
+
+## Select use Boilerplate
+use_boilerplate_options=("Yes" "No")
+select_option "${use_boilerplate_options[@]}" "Select_Use_Boilerplate"
+use_boilerplate=$select_result
+
+if [ $use_boilerplate == "Yes" ]; then
+    green "보일러 플레이트 CLI를 입력하세요: " && print_text
+    blue "ex) " && yellow "yarn create next-app . --typescript" && print_text
+    read cli
+
+    ## Excute Boilerplate CLI
+    $cli
+else yarn init
+fi
+
+## Delete ESLint Config File
+find . -type f -regex ".*eslint.*" -exec rm -f {} +
+
+## Add ESLint Deps & Config File
+. "../../packages/scripts/eslint.sh"
 
 ## Move to Root
 cd $root
 
-sed -i "s/$2/${escape_workspace_name}/" $path/package.json
+## Mod Workspace Name
+sed -i "s/$repository_name/${escape_workspace_name}/" $path/package.json
 
 sed -n "/${escape_workspace_name}/p" $path/package.json
 
-yarn
-
-green "add-workspace" && red " ${workspace_name}" && add_echo_text " End!!"
-
-echo "${echo_text}" && reset_echo_text
+green "add-workspace" && red " ${workspace_name}" && add_text " End!!"
+print_text
 
 echo ===== Workspace List =====
 
